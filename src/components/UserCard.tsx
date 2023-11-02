@@ -6,7 +6,7 @@ import moment from 'moment'
 
 export const UserCard = (userData: DefaultData) => {
     return (
-        <div className='user-card rounded-[10px] bg-white p-6 shadow-light dark:bg-[#1E2A47] dark:shadow-none sm:p-10 md:p-12'>
+        <div className='user-card rounded-[0px] bg-white p-6 shadow-light dark:bg-[#1E2A47] dark:shadow-none sm:p-10 md:p-12'>
             {userData.avatar_url && (
                 <UserImage
                     avatarUrl={userData?.avatar_url}
@@ -25,7 +25,10 @@ export const UserCard = (userData: DefaultData) => {
                         <span className='text-[16px] font-bold text-[#2B3442] dark:text-white sm:text-[26px]'>
                             {userData?.name}
                         </span>
-                        <span className='text-[13px] text-[#0079FF] sm:text-[1rem]'>@{userData?.login}</span>
+                        <span className='text-[13px] text-[#0079FF] sm:text-[1rem]'>
+                            <a href={userData?.html_url} target="_blank" rel="noopener noreferrer">
+                                @{userData?.login}
+                            </a></span>
                     </div>
                     <span className='text-[13px] text-[#4B6A9B] dark:text-white sm:text-[15px] md:pt-2'>
                         Joined {moment(userData?.created_at).format('DD MMM yyy')}

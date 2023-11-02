@@ -1,7 +1,7 @@
 import { DefaultData } from '../types'
 import { FollowUpItem } from '../components'
 
-type FollowUpProps = Pick<DefaultData, 'followers' | 'following' | 'public_repos'>
+type FollowUpProps = Pick<DefaultData, 'followers' | 'following' | 'public_repos' | 'repos_url'>
 
 export const UserFollowUp = (userData: FollowUpProps) => {
     return (
@@ -11,14 +11,17 @@ export const UserFollowUp = (userData: FollowUpProps) => {
             <FollowUpItem
                 itemName='Repos'
                 itemData={userData?.public_repos}
+                itemLink={userData?.repos_url}
             />
             <FollowUpItem
                 itemName='Followers'
                 itemData={userData?.followers}
+                itemLink={userData?.repos_url}
             />
             <FollowUpItem
                 itemName='following'
                 itemData={userData?.following}
+                itemLink={userData?.repos_url}
             />
         </div>
     )

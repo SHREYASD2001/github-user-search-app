@@ -9,8 +9,10 @@ export interface DefaultData {
     following: number
     public_repos: number
     location?: string
-    email?: null
+    email?: string
     blog?: string
-    twitter_username?: null
+    twitter_username?: string
     company?: string
+html_url: string
+repos_url: string
 }
